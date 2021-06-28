@@ -163,7 +163,7 @@
         
         <img id="btn" src="../arquivos/imagens/003_login/app.png" 
                                                     style="cursor: pointer; float: right"
-                                                    onclick="window.open('http://zxing.appspot.com/scan?ret=http://www.jmarysystems.com.br/ProdutoPorEan/web/controle_de_validade/controle_de_validade_0001_01_adiciona_produto.html?ean=1', '_parent');"
+                                                    onclick=""
                                                     title="Voltar" width="80" height="60px">    
     </li> 
                             
@@ -172,13 +172,19 @@
             onMouseover=" this.style.color='#fff'; this.style.backgroundColor='#23871C'; "
             onMouseout="  this.style.color='black'; this.style.backgroundColor='#D3D3D3'; "       
         > 
-            Digite o Ean
+            Cadastrar Produto
         </a>
     </li> 
     
     <li align="center"  style="padding: 0px; margin: 0px; width:100%; color:black; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;">
         
-        <textarea id="ean_manual" name="ean_manual" rows="1" cols="50" style="background-color: #3A3A3A; width:90%; height: 80px; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;">  </textarea>
+        <a style="color:black; font-family:  Arial, Helvetica, sans-serif; text-decoration: none;"
+            onMouseover=" this.style.color='#fff'; this.style.backgroundColor='#23871C'; "
+            onMouseout="  this.style.color='black'; this.style.backgroundColor='#D3D3D3'; "       
+        > 
+            Descrição:
+        </a>
+        <textarea id="parametro_4" name="parametro_4" rows="1" cols="50" style="background-color: #3A3A3A; width:90%; height: 50px; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;">  </textarea>
     </li>
     
     <li align="center"  style="padding: 0px; margin: 0px;">
@@ -188,7 +194,7 @@
                 <td style="">
                 </td>
                 
-                <td style="width:15%;">
+                <td style="width:20%;">
                     <ul style="list-style:none; padding: 0px; margin: 0px; " >
                         
                         <li align="center"  style="padding: 0px; margin: 0px; color:black; font-family:  Arial, Helvetica, sans-serif; ">
@@ -196,18 +202,18 @@
                                onMouseover=" this.style.color='#fff'; this.style.backgroundColor='#23871C'; "
                                onMouseout="  this.style.color='black'; this.style.backgroundColor='#D3D3D3'; "       
                             > 
-                                Quantidade Unidade/Kg:
+                                Código de Pesquisa:
                             </a>
                         </li> 
                         
                         <li align="center"  style="padding: 0px; margin: 0px; color:black; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;">
         
-                            <textarea id="qtd_ean" name="qtd_ean" rows="1" cols="50" style="background-color: #3A3A3A; width:100%; height: 60px; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;">  </textarea>
+                            <textarea id="parametro_1" name="parametro_1" rows="1" cols="50" style="background-color: #3A3A3A; width:100%; height: 50px; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;">  </textarea>
                         </li>
                     </ul>
                 </td>
                 
-                <td style="width:15%;">
+                <td style="width:20%;">
                     <ul style="list-style:none; padding: 0px; margin: 0px; " >
                         
                         <li align="center"  style="padding: 0px; margin: 0px; color:black; font-family:  Arial, Helvetica, sans-serif; ">
@@ -215,13 +221,65 @@
                                onMouseover=" this.style.color='#fff'; this.style.backgroundColor='#23871C'; "
                                onMouseout="  this.style.color='black'; this.style.backgroundColor='#D3D3D3'; "       
                             > 
-                                Data de vencimento
+                                Referência Fornecedor
                             </a>
                         </li> 
                         
                         <li align="center"  style="padding: 0px; margin: 0px; color:black; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;">
         
-                            <textarea id="data_ean" name="data_ean" rows="1" cols="50" style="background-color: #3A3A3A; width:100%; height: 60px; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;">  </textarea>
+                            <textarea id="parametro_2" name="parametro_2" rows="1" cols="50" style="background-color: #3A3A3A; width:100%; height: 50px; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;">  </textarea>
+                        </li>
+                    </ul>
+                </td>
+                
+                <td style="">
+                </td>
+                
+            </tr>
+        </table>
+    </li> 
+    
+    <li align="center"  style="padding: 0px; margin: 0px;">
+        <table border="0" cellpadding="0" cellspacing="3" style="padding: 0; margin: 0; ">
+            <tr>
+                
+                <td style="">
+                </td>
+                
+                <td style="width:20%;">
+                    <ul style="list-style:none; padding: 0px; margin: 0px; " >
+                        
+                        <li align="center"  style="padding: 0px; margin: 0px; color:black; font-family:  Arial, Helvetica, sans-serif; ">
+                            <a style="color:black; font-family:  Arial, Helvetica, sans-serif; text-decoration: none;"
+                               onMouseover=" this.style.color='#fff'; this.style.backgroundColor='#23871C'; "
+                               onMouseout="  this.style.color='black'; this.style.backgroundColor='#D3D3D3'; "       
+                            > 
+                                ID:
+                            </a>
+                        </li> 
+                        
+                        <li align="center"  style="padding: 0px; margin: 0px; color:black; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;">
+        
+                            <textarea id="parametro_3" name="parametro_3" rows="1" cols="50" style="background-color: #3A3A3A; width:100%; height: 50px; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;">  </textarea>
+                        </li>
+                    </ul>
+                </td>
+                
+                <td style="width:20%;">
+                    <ul style="list-style:none; padding: 0px; margin: 0px; " >
+                        
+                        <li align="center"  style="padding: 0px; margin: 0px; color:black; font-family:  Arial, Helvetica, sans-serif; ">
+                            <a style="color:black; font-family:  Arial, Helvetica, sans-serif; text-decoration: none;"
+                               onMouseover=" this.style.color='#fff'; this.style.backgroundColor='#23871C'; "
+                               onMouseout="  this.style.color='black'; this.style.backgroundColor='#D3D3D3'; "       
+                            > 
+                                Estoque(Quantidade):
+                            </a>
+                        </li> 
+                        
+                        <li align="center"  style="padding: 0px; margin: 0px; color:black; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;">
+        
+                            <textarea id="parametro_5" name="parametro_5" rows="1" cols="50" style="background-color: #3A3A3A; width:100%; height: 50px; color:#fff; font-family:  Arial, Helvetica, sans-serif; font-size: 150%;">  </textarea>
                         </li>
                     </ul>
                 </td>
@@ -235,16 +293,96 @@
 
     <li align="center" style="padding: 0px; margin: 0px;">
         
-        <img src="../arquivos/imagens/003_login/enviar.png"  
+        <img src="../arquivos/imagens/003_login/cadastrar.png"  
             style="cursor: pointer; padding-top: 1px;"
             
-                    onclick="adicionar_produto(
-                        document.getElementById ('usuario_logado_id_nome').value,        
-                        document.getElementById ('ean_manual').value,
-                        document.getElementById ('qtd_ean').value,
-                        document.getElementById ('data_ean').value
-                    );" alt="" width="135" height="45"
+                    onclick="cadastrar();" 
+                    alt="" width="135" height="45"
         >
+        
+        <script type="text/javascript">
+                                                
+            function cadastrar(){
+                                                    
+                var parametro_1  = document.getElementById( "parametro_1" ).value.trim();           
+                var parametro_2  = document.getElementById( "parametro_2" ).value.trim();     
+                var parametro_3  = document.getElementById( "parametro_3" ).value.trim();     
+                var parametro_4  = document.getElementById( "parametro_4" ).value.trim();     
+                var parametro_5  = document.getElementById( "parametro_5" ).value.trim();  
+                
+                /////////////////////////////////////////////////////////////////////////
+                var p1_encripitado = criptografar_em_Numeros_Inteiros_Alfabeto_JM_Sem_Arroba( parametro_1.trim() );
+                var p2_encripitado = criptografar_em_Numeros_Inteiros_Alfabeto_JM_Sem_Arroba( parametro_2.trim() );
+                var p3_encripitado = criptografar_em_Numeros_Inteiros_Alfabeto_JM_Sem_Arroba( parametro_3.trim() );
+                var p4_encripitado = criptografar_em_Numeros_Inteiros_Alfabeto_JM_Sem_Arroba( parametro_4.trim() );
+                var p5_encripitado = criptografar_em_Numeros_Inteiros_Alfabeto_JM_Sem_Arroba( parametro_5.trim() );
+                var p_encripitado_todos =  
+                        p1_encripitado + "j" + p2_encripitado + "j" + p3_encripitado  + "j" + 
+                        p4_encripitado  + "j" +  p5_encripitado  
+                    ;
+                /////////////////////////////////////////////////////////////////////////
+    
+                if( parametro_1 === "" || parametro_4 === "" ) {
+            
+                    alert( "Informe o Código de Pesquisa e a \nDescrição do Produto para \nCadastrar um Produto!\n"   );
+                                                    }
+                else{
+                                                                                                
+                    var url_inicial = 'https://script.google.com/macros/s/AKfycbzzMf5yvuqr0bYNFsg0__3hdR3yem30HQ36Au0POPZ3EWVj-6edGHHRDK8S4TKrwhZ9/exec';
+                    var parametros = '?' + 
+                            'p_encripitado_todos=' + p_encripitado_todos + '&' +
+                            'parametro_1=' + parametro_1 + '&' + 'parametro_2=' + parametro_2 + '&' + 'parametro_3=' + parametro_3 +
+                            '&' +
+                            'parametro_4=' + parametro_4 + '&' + 'parametro_5=' + parametro_5;
+                    var url = url_inicial + parametros;
+                    
+                    //alert(url);
+                                        
+                    try{
+                        document.getElementById( "googlescript" ).src = url;                        
+                    }catch(Exception){}
+                    
+                    document.getElementById( "parametro_1" ).value = "";           
+                    document.getElementById( "parametro_2" ).value = "";        
+                    document.getElementById( "parametro_3" ).value = "";      
+                    document.getElementById( "parametro_4" ).value = "";          
+                    document.getElementById( "parametro_5" ).value = "";  
+                    
+                    alert( "Produto Cadastrado com Sucesso. \nClick em OK.\nPara Prosseguir.!\n"   );
+                                            
+                }
+            }
+        </script>  
+        
+        <script type="text/javascript">
+        function criptografar_em_Numeros_Inteiros_Alfabeto_JM_Sem_Arroba(argumento){            
+            //var sb = [];
+            var sb = "";
+                                                                
+            try{
+                                        
+                for( var i = 0; i < argumento.length; i++ ) {
+                    
+                    var decimal_unicode = argumento.charCodeAt(i);
+                    //sb.push( decimal_unicode );
+                    sb += decimal_unicode;
+                    sb += "-";
+                    
+                    //var dados_anteriores = document.getElementById("ul_resposta").innerHTML;
+                    //var temp = "<li>" + i + " - " + decimal_unicode + "</li>";                    
+                    //document.getElementById("ul_resposta").innerHTML = dados_anteriores + temp;
+                                    
+                }
+                                                
+                return sb;
+                                                
+            }catch(Exception){
+                
+                document.getElementById("resposta").innerText = "exportar_Para_Alfabeto_JM_Sem_Arroba -- " + Exception;
+            }                       
+        }
+        </script>
+        
     </li>
 </ul>    
     
@@ -264,6 +402,12 @@
     
     
     
+
+<div style="display: none; padding: 0; margin: 0; z-index:-1;">
+    <iframe id="googlescript" name="centro" style="padding: 0; margin: 0; z-index:-1;" scrolling="auto" width="100%" frameborder="0" allowfullscreen
+        src="Area/Lojas/edilson_brasil/login_web_0001/login_web_0001.html" >            
+    </iframe>     
+</div>  
 
 
 <!-- 

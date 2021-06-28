@@ -75,48 +75,34 @@ function _0005_02_controle_de_validade_tabela_html_listar_na_tabela_html_a_plani
             if( linha_recebida[i].includes("-") ){
                 
                 //alert(linha_recebida[i]);
-                var jm_id = "";
-                var jm_comando = "";
-                var jm_auto_quantidade_de_alteracoes = "";                        
-                var jm_destinatario = "";
-                var jm_remetente = "";
-                var jm_data = "";
-                var jm_qtd = "";
-                var jm_ean = "";
-                var jm_material = "";
-                var jm_umb = "";
+                var parametro_1 = "";
+                var parametro_2 = "";
+                var parametro_3 = "";                        
+                var parametro_4 = "";
+                var parametro_5 = "";
+                var parametro_6 = "";
                 
                 var argumentos = linha_recebida[i].split("j");
                 
                 try{
                     
-                    jm_id = argumentos[0];
-                    jm_comando = argumentos[1];
-                    jm_auto_quantidade_de_alteracoes = argumentos[2];
-                    jm_destinatario = argumentos[3];
-                    jm_remetente = argumentos[4];
-                    jm_data = argumentos[5];
-                    jm_qtd = argumentos[6];
-                    jm_ean = argumentos[7];
-                    jm_material = argumentos[8];
-                    jm_umb = argumentos[9];
+                    parametro_1 = argumentos[0];
+                    parametro_2 = argumentos[1];
+                    parametro_3 = argumentos[2];
+                    parametro_4 = argumentos[3];
+                    parametro_5 = argumentos[4];
+                    parametro_6 = argumentos[5];
+
                 }catch(Exception){}
-                
-                var remet2 = ""; try{ remet2 = importar_Para_Alfabeto_JM( jm_remetente ).trim() }catch(Exception){}
-                var remet = remet2; try{ remet = remet2.replace("%20", " ").trim().toUpperCase(); }catch(Exception){}
                                
                 $('#tabela > tbody:last').append(
                     '<tr>' + 
-                        '<td>' + importar_Para_Alfabeto_JM( jm_id ).trim() + '</td>' + 
-                        //'<td>' + importar_Para_Alfabeto_JM( jm_comando ).trim() + '</td>' + 
-                        //'<td>' + importar_Para_Alfabeto_JM( jm_auto_quantidade_de_alteracoes ).trim() + '</td>' + 
-                        '<td>' + importar_Para_Alfabeto_JM( jm_destinatario ).trim() + '</td>' + 
-                        '<td>' + remet.trim() + '</td>' + 
-                        '<td>' + importar_Para_Alfabeto_JM( jm_data ).trim() + '</td>' + 
-                        '<td>' + importar_Para_Alfabeto_JM( jm_qtd ).trim() + '</td>' + 
-                        '<td NOWRAP=\'NOWRAP\'>' + importar_Para_Alfabeto_JM( jm_ean ).trim() + '</td>' + 
-                        '<td NOWRAP=\'NOWRAP\'>' + importar_Para_Alfabeto_JM( jm_material ).trim() + '</td>' + 
-                        '<td>' + importar_Para_Alfabeto_JM( jm_umb ).trim() + '</td>' + 
+                        '<td>' + parametro_1.trim() + '</td>' + 
+                        '<td>' + descriptografar_em_Numeros_Inteiros_Alfabeto_JM_Sem_Arroba( parametro_2 ).trim() + '</td>' + 
+                        '<td>' + descriptografar_em_Numeros_Inteiros_Alfabeto_JM_Sem_Arroba( parametro_3 ).trim() + '</td>' + 
+                        '<td>' + descriptografar_em_Numeros_Inteiros_Alfabeto_JM_Sem_Arroba( parametro_4 ).trim() + '</td>' + 
+                        '<td NOWRAP=\'NOWRAP\'>' + descriptografar_em_Numeros_Inteiros_Alfabeto_JM_Sem_Arroba( parametro_5 ).trim() + '</td>' + 
+                        '<td>' + descriptografar_em_Numeros_Inteiros_Alfabeto_JM_Sem_Arroba( parametro_6 ).trim() + '</td>' + 
                     '</tr>'
                 );
 
@@ -149,3 +135,83 @@ function _0005_02_controle_de_validade_tabela_html_listar_na_tabela_html_a_plani
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+function descriptografar_em_Numeros_Inteiros_Alfabeto_JM_Sem_Arroba( object1 ){
+        
+        /*
+        var anterior = document.getElementById("ul_meus_contatos").innerHTML;
+                            document.getElementById("ul_meus_contatos").innerHTML = anterior + 
+                                    "<br>" +                                    
+                                    "<br>" + "<br>" + "<br>" + "<br>" + "<br>" + "<br>" + "<br>" + "<br>" + "<br>" +
+                                    "-------------------------------------------------------------------------------------" + "<br>" +
+                                    "verificar_igualdade( object1, object2 ) " +
+                                    "<br>" +
+                                    "object1: " + object1 +
+                                    "<br>" +
+                                    "object1: " + object2;
+        */                  
+       
+        /*
+        var anterior = document.getElementById("ul_meus_contatos").innerHTML;
+                            document.getElementById("ul_meus_contatos").innerHTML = anterior + 
+                                    "<br>" +                                    
+                                    "<br>" + "<br>" + "<br>" + "<br>" + "<br>" + "<br>" + "<br>" + "<br>" + "<br>" +
+                                    "-------------------------------------------------------------------------------------" + "<br>";
+        */   
+       
+        var retorno = "";
+    
+        try{
+            
+            var argumento1 = object1.split("-");                                        
+            for( var i = 0; i < argumento1.length; i++ ) {
+                try{
+                    var letra_unicode = String.fromCharCode( argumento1[i] );   
+                    
+                    if ( letra_unicode === undefined || letra_unicode === "" || letra_unicode === null){
+    
+                    }
+                    else if ( argumento1[i] > 32 ){
+                        
+                        retorno += letra_unicode;
+                    }
+                    
+                    /*
+                    var anterior = document.getElementById("ul_meus_contatos").innerHTML;
+                        document.getElementById("ul_meus_contatos").innerHTML = anterior + 
+                            "<br>" +
+                            argumento1[i] + " - " + letra_unicode;
+                    */
+                }catch(Exception){}
+            }
+            
+            /*
+            var anterior = document.getElementById("ul_meus_contatos").innerHTML;
+                document.getElementById("ul_meus_contatos").innerHTML = anterior + 
+                                    "<br>" +
+                                    "<br>" +
+                                    "verificar_igualdade( object1, object2 ) " +
+                                    "<br>" +
+                                    "letras1.length: " + letras1.length +
+                                    "<br>" +
+                                    "letras2.length: " + letras2.length +
+                                    "<br>" +
+                                    "numeros1: " + numeros1 +
+                                    "<br>" +
+                                    "letras1: " + letras1 +
+                                    "<br>" +
+                                    "numeros2: " + numeros2 +
+                                    "<br>" +
+                                    "letras2: " + letras2;
+            */
+            
+        }catch(Exception){}
+        
+        return retorno;
+    }

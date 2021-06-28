@@ -301,7 +301,7 @@
             onMouseover=" this.style.color='#fff'; this.style.backgroundColor='#23871C'; "
             onMouseout="  this.style.color='black'; this.style.backgroundColor='#D3D3D3'; "       
         > 
-            Controle de Validade
+            Controle de Estoque
         </a>
     </li> 
 </ul>
@@ -310,14 +310,12 @@
 
             <thead>
                 <tr>
-                    <th align="center" >Data da Sinalização</th>
-                    <th align="center" >Loja</th>
-                    <th align="center" >Remetente</th>
-                    <th align="center" >Data de Vencimento</th>
-                    <th align="center" >Quantidade</th>
-                    <th align="center" >Ean</th>
-                    <th align="center" >Material</th>
-                    <th align="center" >UMB</th>
+                    <th align="center" >Última Alteração</th>
+                    <th align="center" >Código de Pesquisa</th>
+                    <th align="center" >Referência Fornecedor</th>
+                    <th align="center" >ID</th>
+                    <th align="center" >Descrição do produto</th>
+                    <th align="center" >Estoque (Quantidade)</th>
                 </tr>
                 <tr>
                     <th><input type="text" id="txtColuna1"/></th>
@@ -326,8 +324,6 @@
                     <th><input type="text" id="txtColuna4"/></th>
                     <th><input type="text" id="txtColuna5"/></th>
                     <th><input type="text" id="txtColuna6"/></th>
-                    <th><input type="text" id="txtColuna7"/></th>
-                    <th><input type="text" id="txtColuna8"/></th>
                 </tr>            
             </thead>
             <tbody>
@@ -348,7 +344,6 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--> 
 
         
-
 
 
 
@@ -399,8 +394,11 @@
 //INÍCIO - BAIXANDO TABELA PRODUTOS POR EAN  
     try{
         
+        var id__planilha_001 = "1I1aKt4J4CRwLmg4-L3rA4Z2d6iQ7Bp6TkzlZvTwuZjY";
+        var url_planilha_001 = "https://sheets.googleapis.com/v4/spreadsheets/"+ id__planilha_001 + "/values/A:B?key=AIzaSyBwiMCywJRFQHuuksWdhqwjOrR5mDaWJYs";
+        
         $.ajax({
-            url: url_planilha_tabela_controle_de_validade,
+            url: url_planilha_001,
             success: function(data) {
                 document.getElementById("tabela_de_produtos_proximos_do_vencimento_xls").value = JSON.stringify(data);
                 _0005_02_controle_de_validade_tabela_html_listar_na_tabela_html_a_planilha_principal();
